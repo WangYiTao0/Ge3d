@@ -1,0 +1,1 @@
+Common Setting in Visual studio
