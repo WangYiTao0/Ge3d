@@ -1,0 +1,7 @@
+[submodule "Ge3d/3rdPart/Imgui"]
+	path = Ge3d/3rdPart/Imgui
+	url = https://github.com/WangYiTao0/imgui
+[submodule "Ge3d/3rdPart/spdlog"]
+	path = Ge3d/3rdPart/spdlog
+	url = https://github.com/gabime/spdlog
+
