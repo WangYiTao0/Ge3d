@@ -7,13 +7,24 @@ staticruntime "on"
 targetdir("../bin/" .. outputdir .. "/%{prj.name}")
 objdir("../bin-obj/" .. outputdir .. "/%{prj.name}")
 
---pchheader "aspch.h"
---pchsource "src/aspch.cpp"
+pchheader "gepch.h"
+pchsource "src/gepch.cpp"
+
+characterset ("MBCS")
+
+buildoptions
+{
+    "/permissive-",
+    "/sdl",
+    "/w34265",
+}
 
 files
 {
-    "src/**.h",
-    "src/**.cpp"
+	"src/**.h", 
+	"src/**.c", 
+	"src/**.hpp", 
+	"src/**.cpp" 
 }
 
 defines
@@ -23,12 +34,18 @@ defines
 
 includedirs
 {
-    "src"
+    "src",
+    "%{IncludeDir.ImGui}",
+    "3rdPart/spdlog/include",
+    "3rdPart/assimp/include",
+    "3rdPart/DirectXTex/include",
 }
 
 links
 {
- 
+    "ImGui",
+    "d3d11.lib",
+    "D3DCompiler.lib",
 }
 
 filter "system:windows"
@@ -44,7 +61,29 @@ filter "configurations:Debug"
     runtime "Debug"
     symbols "on"
 
+    defines
+    {
+        "IS_DEBUG=true"
+    }
+
+    links
+    {
+        "3rdPart/DirectXTex/lib/Debug/DirectXTex.lib"
+    }
+
 filter "configurations:Release"
     defines "GE_RELEASE"
     runtime "Release"
     optimize "on"
+
+    
+    defines
+    {
+        "IS_DEBUG=false",
+        "NDEBUG"
+    }
+
+    links
+    {
+        "3rdPart/DirectXTex/lib/Release/DirectXTex.lib"
+    }

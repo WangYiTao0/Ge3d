@@ -18,10 +18,13 @@ workspace "Ge3d"
     outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to 
+IncludeDir = {}
+IncludeDir["ImGui"] = "3rdPart/imgui"
 
 -- Projects
 group "Dependencies"
-
+    include "Ge3d/3rdPart/imgui"
+    
 group ""
 
 include "Ge3d"
