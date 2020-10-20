@@ -2,7 +2,7 @@
 
 #include "Ge/Core/Layer.h"
 
-namespace ge
+namespace GE
 {
 	class ImGuiLayer : public Layer
 	{

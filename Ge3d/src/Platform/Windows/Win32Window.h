@@ -1,5 +1,5 @@
 #include "GE/Core/Window.h"
-#include "Platform/DirectX11/Graphics.h"
+#include "Ge/Renderer/Graphics.h"
 
 #include <d3d11.h>
 

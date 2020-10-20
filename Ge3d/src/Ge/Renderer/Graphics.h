@@ -1,5 +1,6 @@
 #pragma once
-#include "Platform/DirectX11/Marcros/GrahicsThrowMacro.h"
+#include "Platform/DirectX11/Debug/Marcros/GrahicsThrowMacro.h"
+#include "Platform/DirectX11/Debug/ConditionalNoexcept.h"
 #include "Platform/DirectX11/Debug/DxgiInfoManager.h"
 #include "Platform/DirectX11/Bindable/Bindable.h"
 #include "Platform/DirectX11/Debug/GEException.h"
@@ -12,6 +13,14 @@ namespace GE
 	{
 		class Bindable;
 	}
+	enum class API
+	{
+		None = 0,
+		DirectX11 = 1,
+		DirectX12 = 2,
+		Vulkan = 3,
+	};
+
 
 	class Graphics
 	{
@@ -44,19 +53,24 @@ namespace GE
 			std::string reason;
 		};
 
-		Graphics(HWND hWnd);
+		Graphics() {};
 		Graphics(const Graphics&) = delete;
 		Graphics& operator=(const Graphics&) = delete;
-		~Graphics() = default;
-		void EndFrame();
-		void ClearBuffer(float red, float green, float blue) noexcept;
-	private:
+		virtual ~Graphics() {};
+		virtual void BeginFrame(float red, float green, float blue) noexcept = 0;
+		virtual void EndFrame() = 0;
+		virtual void DrawIndexed(UINT count) noxnd = 0;
+
+		static Scope<Graphics> Create(HWND hwnd);
+		static void SetAPI(API api);
+
+		static API GetAPI() { return s_CurrentGraphicsAPI; }
+	protected:
 #ifndef NDEBUG
 		DxgiInfoManager infoManager;
 #endif
-		Microsoft::WRL::ComPtr<ID3D11Device> pDevice;
-		Microsoft::WRL::ComPtr<IDXGISwapChain> pSwap;
-		Microsoft::WRL::ComPtr<ID3D11DeviceContext> pContext;
-		Microsoft::WRL::ComPtr<ID3D11RenderTargetView> pTarget;
+	private:
+		static API s_CurrentGraphicsAPI;
+
 	};
 }

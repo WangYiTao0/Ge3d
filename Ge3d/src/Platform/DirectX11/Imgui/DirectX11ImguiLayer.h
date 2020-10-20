@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GE/Core/Layer.h"
+#include "GE/Imgui/ImguiLayer.h"
 
 #include "GE/Events/ApplicationEvent.h"
 #include "GE/Events/KeyEvent.h"
@@ -8,11 +8,12 @@
 
 namespace GE {
 
-	class ImGuiLayer : public Layer
+	class DirectX11ImGuiLayer : public ImGuiLayer
 	{
 	public:
-		ImGuiLayer();
-		~ImGuiLayer();
+		DirectX11ImGuiLayer();
+		DirectX11ImGuiLayer(const std::string& name);
+		~DirectX11ImGuiLayer();
 
 		virtual void OnAttach() override;
 		virtual void OnDetach() override;

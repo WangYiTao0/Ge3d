@@ -5,8 +5,8 @@
 #include "GE/Events/KeyEvent.h"
 #include "GE/Events/MouseEvent.h"
 
-#include "Platform/DirectX11/Marcros/WindowsThrowMacro.h"
-#include "Platform/DirectX11/Marcros/GrahicsThrowMacro.h"
+#include "Platform/DirectX11/Debug/Marcros/WindowsThrowMacro.h"
+#include "Platform/DirectX11/Debug/Marcros/GrahicsThrowMacro.h"
 
 #include <imgui_impl_win32.h>
 
