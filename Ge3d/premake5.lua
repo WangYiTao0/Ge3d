@@ -39,6 +39,7 @@ includedirs
     "3rdPart/spdlog/include",
     "3rdPart/assimp/include",
     "3rdPart/DirectXTex/include",
+    "%{IncludeDir.entt}",
 }
 
 links

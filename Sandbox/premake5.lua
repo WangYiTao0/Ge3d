@@ -12,15 +12,14 @@
         "/w34265",
     }
 
-	targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("../bin-obj/" .. outputdir .. "/%{prj.name}")
-
+	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("%{wks.location}/bin-obj/" .. outputdir .. "/%{prj.name}")
 
     characterset ("MBCS")
 
     flags
     {
-        "MultiProcessorCompile"
+        "MultiProcessorCompile",
     }
 
 	files
@@ -35,25 +34,25 @@
     
     includedirs
     {
-        "../Ge3d/3rdPart/spdlog/include",
-        "../Ge3d/src",
-		"../Ge3d/3rdPart",
-        "../Ge3d/%{IncludeDir.ImGui}",
-        "../Ge3d/%{IncludeDir.DirectXTex}",
-        "../Ge3d/%{IncludeDir.assimp}",
+		"%{wks.location}/Ge3d/3rdPart/spdlog/include",
+        "%{wks.location}/Ge3d/src",
+		"%{wks.location}/Ge3d/3rdPart",
+		"%{wks.location}/Ge3d/%{IncludeDir.ImGui}",
+		"%{wks.location}/Ge3d/%{IncludeDir.entt}",
+        "%{wks.location}/Ge3d/%{IncludeDir.DirectXTex}",
+        "%{wks.location}/Ge3d/%{IncludeDir.assimp}",
     }
-
     links
     {
         "Ge3d"
     }
 
-    filter "system:windows"
+
+filter "system:windows"
     systemversion "latest"
 
     defines
     {
-
     }
 
 filter "configurations:Debug"

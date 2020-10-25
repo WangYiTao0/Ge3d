@@ -26,14 +26,14 @@ workspace "Ge3d"
 
 -- Include directories relative to 
 IncludeDir = {}
-IncludeDir["ImGui"] = "3rdPart/imgui"
-IncludeDir["entt"] = "%{wks.location}/Hazel/3rdPart/entt/include"
-IncludeDir["assimp"] = "%{wks.location}/Hazel/3rdPart/assimp/include"
-IncludeDir["DirectXTex"] = "%{wks.location}/Hazel/3rdPart/DirectXTex/include"
+IncludeDir["ImGui"] = "%{wks.location}/Ge3d/3rdPart/imgui"
+IncludeDir["entt"] = "%{wks.location}/Ge3d/3rdPart/entt/include"
+IncludeDir["assimp"] = "%{wks.location}/Ge3d/3rdPart/assimp/include"
+IncludeDir["DirectXTex"] = "%{wks.location}/Ge3d/3rdPart/DirectXTex/include"
 
 LibraryDir = {}
-IncludeDir["assimp"] = "%{wks.location}/Hazel/3rdPart/assimp/lib"
-IncludeDir["DirectXTex"] = "%{wks.location}/Hazel/3rdPart/DirectXTex/lib"
+IncludeDir["assimp"] = "%{wks.location}/Ge3d/3rdPart/assimp/lib"
+IncludeDir["DirectXTex"] = "%{wks.location}/Ge3d/3rdPart/DirectXTex/lib"
 -- Projects
 group "Dependencies"
     include "3rdPart/premake"
