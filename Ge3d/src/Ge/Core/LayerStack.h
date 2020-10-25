@@ -5,7 +5,7 @@
 
 #include <vector>
 
-namespace GE {
+namespace Ge {
 
 	class LayerStack
 	{

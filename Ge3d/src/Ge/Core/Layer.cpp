@@ -1,7 +1,7 @@
 #include "gepch.h"
 #include "Layer.h"
 
-namespace GE {
+namespace Ge {
 
 	Layer::Layer(const std::string& debugName)
 		: m_DebugName(debugName)

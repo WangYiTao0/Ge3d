@@ -1,17 +1,17 @@
+#include "gepch.h"
 #include "ImguiLayer.h"
-#include "ge/Renderer/Graphics.h"
-#include "Platform/DirectX11/Imgui/DirectX11ImguiLayer.h"
-namespace GE
+#include "ge/Renderer/RendererAPI.h"
+#include "Platform/DirectX11/DirectX11ImguiLayer.h"
+namespace Ge
 {
 	ImGuiLayer* ImGuiLayer::Create()
 	{
-		switch (Graphics::GetAPI())
+		switch (RendererAPI::GetAPI())
 		{
-			switch (Graphics::GetAPI())
-			{
-			case API::None:    GE_CORE_ASSERT(false, "API::None is currently not supported!"); return nullptr;
-			case API::DirectX11:  return CreateScope<DirectX11Imgui>();
-			}
+		case RendererAPI::API::None:   
+			GE_CORE_ASSERT(false, "API::None is currently not supported!");
+			return nullptr;
+		case RendererAPI::API::DirectX11:  return new DirectX11ImGuiLayer();
 		}
 	}
 }

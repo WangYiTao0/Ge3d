@@ -4,7 +4,7 @@
 
 #include "ExampleLayer.h"
 
-namespace GE
+namespace Ge
 {
 
 	class Sandbox : public Application

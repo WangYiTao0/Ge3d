@@ -3,7 +3,7 @@
 
 using namespace std::chrono;
 
-namespace GE
+namespace Ge
 {
 	Timer::Timer() noexcept
 	{

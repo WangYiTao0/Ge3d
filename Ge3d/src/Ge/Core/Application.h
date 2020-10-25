@@ -10,12 +10,12 @@
 
 int main(int argc, char** argv);
 
-namespace GE
+namespace Ge
 {
 	class  Application
 	{
 	public:
-		Application();
+		Application(const std::string& name = "Ge App");
 		virtual ~Application();
 
 

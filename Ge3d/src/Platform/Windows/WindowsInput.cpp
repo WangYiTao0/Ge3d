@@ -5,7 +5,7 @@
 
 #include <Windows.h>
 
-namespace GE {
+namespace Ge {
 
 
 	bool WindowsInput::IsKeyPressedImpl(int key)

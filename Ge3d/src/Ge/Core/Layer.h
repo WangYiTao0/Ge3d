@@ -4,7 +4,7 @@
 #include "GE/Core/Timer.h"
 #include "GE/Events/Event.h"
 
-namespace GE {
+namespace Ge {
 
 	class  Layer
 	{

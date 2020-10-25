@@ -1,7 +1,7 @@
 #include <Ge3d.h>
 #include "ExampleLayer.h"
 
-namespace GE
+namespace Ge
 {
 	ExampleLayer::ExampleLayer()
 		: Layer("Example")
@@ -11,10 +11,10 @@ namespace GE
 	{
 		//GE_INFO("ExampleLayer::Update");
 
-		if (GE::Input::IsKeyPressed(GE_TAB))
+		if (Ge::Input::IsKeyPressed(GE_TAB))
 			GE_INFO("Tab key is pressed");
 	}
-	void ExampleLayer::OnEvent(GE::Event& e)
+	void ExampleLayer::OnEvent(Ge::Event& e)
 	{
 		GE_TRACE("{0}", e);
 	}

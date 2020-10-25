@@ -5,15 +5,13 @@
 #include "GE/Events/KeyEvent.h"
 #include "GE/Events/MouseEvent.h"
 
-#include "Platform/DirectX11/Debug/Marcros/WindowsThrowMacro.h"
-#include "Platform/DirectX11/Debug/Marcros/GrahicsThrowMacro.h"
 
 #include <imgui_impl_win32.h>
 
 IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 
-namespace GE
+namespace Ge
 {
 	static bool sWin32Initialized = false;
 
@@ -93,7 +91,6 @@ namespace GE
 		UpdateWindow(m_Win32Window);
 		SetFocus(m_Win32Window);
 
-		pGfx = CreateScope<Graphics>(m_Win32Window);
 	}
 
 	void Win32Window::Shutdown()
@@ -237,74 +234,6 @@ namespace GE
 
 		return result;
 	}
-	Graphics& Win32Window::Gfx()
-	{
-		if (!pGfx)
-		{
-			throw GEHWND_NOGFX_EXCEPT();
-		}
-		return *pGfx;
-	}
-	std::string Win32Window::Exception::TranslateErrorCode(HRESULT hr) noexcept
-	{
-		char* pMsgBuf = nullptr;
-		// windows will allocate memory for err string and make our pointer point to it
-		const DWORD nMsgLen = FormatMessage(
-			FORMAT_MESSAGE_ALLOCATE_BUFFER |
-			FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
-			nullptr, hr, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-			reinterpret_cast<LPSTR>(&pMsgBuf), 0, nullptr
-		);
-		// 0 string length returned indicates a failure
-		if (nMsgLen == 0)
-		{
-			return "Unidentified error code";
-		}
-		// copy error string from windows-allocated buffer to std::string
-		std::string errorString = pMsgBuf;
-		// free windows buffer
-		LocalFree(pMsgBuf);
-		return errorString;
-	}
 
-	Win32Window::HrException::HrException(int line, const char* file, HRESULT hr) noexcept
-		:
-		Exception(line, file),
-		hr(hr)
-	{
-
-	}
-
-	const char* Win32Window::HrException::what() const noexcept
-	{
-		std::ostringstream oss;
-		oss << GetType() << std::endl
-			<< "[Error Code] 0x" << std::hex << std::uppercase << GetErrorCode()
-			<< std::dec << " (" << (unsigned long)GetErrorCode() << ")" << std::endl
-			<< "[Description] " << GetErrorDescription() << std::endl
-			<< GetOriginString();
-		whatBuffer = oss.str();
-		return whatBuffer.c_str();
-	}
-
-	const char* Win32Window::HrException::GetType() const noexcept
-	{
-		return "GE Window Exception";
-	}
-
-	HRESULT Win32Window::HrException::GetErrorCode() const noexcept
-	{
-		return hr;
-	}
-
-	std::string Win32Window::HrException::GetErrorDescription() const noexcept
-	{
-		return Exception::TranslateErrorCode(hr);
-	}
-
-	const char* Win32Window::NoGfxException::GetType() const noexcept
-	{
-		return "GE Window Exception [No Graphics]";
-	}
 
 }

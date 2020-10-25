@@ -4,15 +4,15 @@
 
 #ifdef GE_PLATFORM_WINDOWS
 
-extern GE::Application* GE::CreateApplication();
+extern Ge::Application* Ge::CreateApplication();
 
 int main(int argc, char** argv)
 {
-	GE::Log::Init();
+	Ge::Log::Init();
 	GE_CORE_WARN("Initialized Log!");
 	GE_INFO("Hello!");
 
-	auto app = GE::CreateApplication();
+	auto app = Ge::CreateApplication();
 
 	app->Run();
 

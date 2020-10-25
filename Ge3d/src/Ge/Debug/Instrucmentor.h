@@ -8,7 +8,7 @@
 #include <thread>
 #include <mutex>
 
-namespace GE {
+namespace Ge {
 
 	using FloatingPointMicroseconds = std::chrono::duration<double, std::micro>;
 

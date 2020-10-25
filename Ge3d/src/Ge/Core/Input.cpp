@@ -6,7 +6,7 @@
 #include "Platform/Windows/WindowsInput.h"
 #endif
 
-namespace GE {
+namespace Ge {
 
 	Scope<Input> Input::s_Instance = Input::Create();
 

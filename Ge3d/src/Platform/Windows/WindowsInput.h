@@ -2,7 +2,7 @@
 
 #include "GE/Core/Input.h"
 
-namespace GE {
+namespace Ge {
 
 	class WindowsInput : public Input
 	{

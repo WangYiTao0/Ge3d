@@ -5,7 +5,7 @@
 #include "GE/Core/Base.h"
 #include "GE/Events/Event.h"
 
-namespace GE {
+namespace Ge {
 
 	struct WindowProps
 	{

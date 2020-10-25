@@ -5,7 +5,7 @@
 #include <spdlog/spdlog.h>
 #include <spdlog/fmt/ostr.h>
 
-namespace GE {
+namespace Ge {
 
 	class Log
 	{
@@ -22,15 +22,15 @@ namespace GE {
 }
 
 // Core log macros
-#define GE_CORE_TRACE(...)    ::GE::Log::GetCoreLogger()->trace(__VA_ARGS__)
-#define GE_CORE_INFO(...)     ::GE::Log::GetCoreLogger()->info(__VA_ARGS__)
-#define GE_CORE_WARN(...)     ::GE::Log::GetCoreLogger()->warn(__VA_ARGS__)
-#define GE_CORE_ERROR(...)    ::GE::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define GE_CORE_CRITICAL(...) ::GE::Log::GetCoreLogger()->critical(__VA_ARGS__)
+#define GE_CORE_TRACE(...)    ::Ge::Log::GetCoreLogger()->trace(__VA_ARGS__)
+#define GE_CORE_INFO(...)     ::Ge::Log::GetCoreLogger()->info(__VA_ARGS__)
+#define GE_CORE_WARN(...)     ::Ge::Log::GetCoreLogger()->warn(__VA_ARGS__)
+#define GE_CORE_ERROR(...)    ::Ge::Log::GetCoreLogger()->error(__VA_ARGS__)
+#define GE_CORE_CRITICAL(...) ::Ge::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 // Client log macros
-#define GE_TRACE(...)         ::GE::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define GE_INFO(...)          ::GE::Log::GetClientLogger()->info(__VA_ARGS__)
-#define GE_WARN(...)          ::GE::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define GE_ERROR(...)         ::GE::Log::GetClientLogger()->error(__VA_ARGS__)
-#define GE_CRITICAL(...)      ::GE::Log::GetClientLogger()->critical(__VA_ARGS__)
+#define GE_TRACE(...)         ::Ge::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define GE_INFO(...)          ::Ge::Log::GetClientLogger()->info(__VA_ARGS__)
+#define GE_WARN(...)          ::Ge::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define GE_ERROR(...)         ::Ge::Log::GetClientLogger()->error(__VA_ARGS__)
+#define GE_CRITICAL(...)      ::Ge::Log::GetClientLogger()->critical(__VA_ARGS__)

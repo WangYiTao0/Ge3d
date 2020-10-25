@@ -1,7 +1,7 @@
 #pragma once
 #include <Ge3d.h>
 
-namespace GE
+namespace Ge
 {
 	class ExampleLayer : public Layer
 	{
@@ -10,6 +10,6 @@ namespace GE
 
 		void OnUpdate(float dt) override;
 
-		void OnEvent(GE::Event& e) override;
+		void OnEvent(Ge::Event& e) override;
 	};
 }

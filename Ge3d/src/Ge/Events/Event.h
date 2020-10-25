@@ -2,7 +2,7 @@
 #include "gepch.h"
 #include "GE/Core/Base.h"
 
-namespace GE {
+namespace Ge {
 
 	// Events in GE are currently blocking, meaning when an event occurs it
 	// immediately gets dispatched and must be dealt with right then an there.

@@ -4,7 +4,7 @@
 
 #include <sstream>
 
-namespace GE {
+namespace Ge {
 
 	class WindowResizeEvent : public Event
 	{

@@ -6,7 +6,7 @@
 #include "GE/Events/KeyEvent.h"
 #include "GE/Events/MouseEvent.h"
 
-namespace GE {
+namespace Ge {
 
 	class DirectX11ImGuiLayer : public ImGuiLayer
 	{
@@ -17,14 +17,16 @@ namespace GE {
 
 		virtual void OnAttach() override;
 		virtual void OnDetach() override;
-		virtual void OnUpdate(float dt) override;
-		virtual void OnImGuiRender() override;
 		virtual void OnEvent(Event& e) override;
 
 		void Begin();
 		void End();
+
+		void BlockEvents(bool block) { mBlockEvents = block; }
+		void SetDarkThemeColors();
 	private:
-		bool OnWindowResizeEvent(WindowResizeEvent& e);
+
+		bool mBlockEvents = true;
 	};
 
 }

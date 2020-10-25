@@ -6,7 +6,7 @@
 #include "Platform/Windows/Win32Window.h"
 #endif
 
-namespace GE
+namespace Ge
 {
 
 	Scope<Window> Window::Create(const WindowProps& props)

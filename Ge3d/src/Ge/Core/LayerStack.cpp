@@ -1,7 +1,7 @@
 #include "gepch.h"
 #include "LayerStack.h"
 
-namespace GE {
+namespace Ge {
 
 	LayerStack::~LayerStack()
 	{

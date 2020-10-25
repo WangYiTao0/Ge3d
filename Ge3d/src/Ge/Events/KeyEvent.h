@@ -3,7 +3,7 @@
 #include "Event.h"
 #include "GE/Core/Input.h"
 
-namespace GE {
+namespace Ge {
 
 	class KeyEvent : public Event
 	{

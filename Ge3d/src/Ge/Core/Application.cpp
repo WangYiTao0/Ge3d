@@ -1,11 +1,13 @@
 #include "gepch.h"
 #include "Application.h"
 
-namespace GE {
+#include "GE/Renderer/Renderer.h"
+
+namespace Ge {
 
 	Application* Application::s_Instance = nullptr;
 
-	Application::Application()
+	Application::Application(const std::string& name)
 	{
 		GE_CORE_ASSERT(!s_Instance, "Application already exists");
 
@@ -13,6 +15,8 @@ namespace GE {
 
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(GE_BIND_EVENT_FN(Application::OnEvent));
+
+		Renderer::Init();
 
 		m_ImGuiLayer = ImGuiLayer::Create();
 		PushOverlay(m_ImGuiLayer);

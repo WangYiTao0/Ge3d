@@ -5,7 +5,7 @@
 
 #include <sstream>
 
-namespace GE {
+namespace Ge {
 
 	class MouseMovedEvent : public Event
 	{

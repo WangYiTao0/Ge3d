@@ -45,7 +45,7 @@ links
 {
     "ImGui",
     "d3d11.lib",
-    "D3DCompiler.lib",
+    --"D3DCompiler.lib",
 }
 
 filter "system:windows"

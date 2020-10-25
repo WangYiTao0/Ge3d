@@ -5,7 +5,7 @@
 #include "GE/Core/KeyCodes.h"
 #include "GE/Core/MouseCodes.h"
 
-namespace GE {
+namespace Ge {
 
 	class Input
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace GE {
+namespace Ge {
 
 	class Timer
 	{
