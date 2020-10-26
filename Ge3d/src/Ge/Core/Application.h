@@ -8,6 +8,8 @@
 
 #include "GE/ImGui/ImGuiLayer.h"
 
+#include "Ge/Renderer/GraphicsContext.h"
+
 int main(int argc, char** argv);
 
 namespace Ge

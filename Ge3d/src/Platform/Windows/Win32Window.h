@@ -1,4 +1,7 @@
 #include "GE/Core/Window.h"
+
+#include "Ge/Renderer/GraphicsContext.h"
+
 namespace Ge
 {
 	class Win32Window : public Window
@@ -28,6 +31,7 @@ namespace Ge
 	private:
 
 		HWND m_Win32Window;
+		Scope<GraphicsContext> m_Context;
 
 		struct WindowData
 		{

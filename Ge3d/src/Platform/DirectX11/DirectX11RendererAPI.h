@@ -17,13 +17,5 @@ namespace Ge
 
 		virtual void DrawIndexed(uint32_t indexCount = 0) override;
 
-	public:
-
-	private:
-		Microsoft::WRL::ComPtr<ID3D11Device> m_pd3dDevice;
-		Microsoft::WRL::ComPtr<IDXGISwapChain> pSwap;
-		Microsoft::WRL::ComPtr<ID3D11DeviceContext> m_pImmediateContext;
-
-		D3D_FEATURE_LEVEL m_feature_level;
 	};
 }

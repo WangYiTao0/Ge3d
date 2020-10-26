@@ -91,6 +91,9 @@ namespace Ge
 		UpdateWindow(m_Win32Window);
 		SetFocus(m_Win32Window);
 
+		m_Context = GraphicsContext::Create();
+		m_Context->Init(m_Win32Window,m_Data.Width,m_Data.Height);
+
 	}
 
 	void Win32Window::Shutdown()
@@ -100,6 +103,7 @@ namespace Ge
 
 	void Win32Window::OnUpdate()
 	{
+
 		MSG message;
 
 		while (PeekMessage(&message, NULL, 0, 0, PM_REMOVE) > 0)
@@ -108,6 +112,9 @@ namespace Ge
 			DispatchMessage(&message);
 
 		}
+
+		m_Context->SetClearColor(1.0, 0.0, 0.0, 1.0);
+		m_Context->SwapBuffers(m_Data.VSync);
 	}
 
 	void Win32Window::SetVSync(bool enabled)

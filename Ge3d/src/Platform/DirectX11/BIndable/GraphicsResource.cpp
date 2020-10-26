@@ -5,14 +5,14 @@
 namespace Ge
 {
 
-	ID3D11DeviceContext* GraphicsResource::GetContext(DirectX11RendererAPI& renderAPI) noexcept
+	ID3D11DeviceContext* GraphicsResource::GetContext(DirectX11Context& directX11Context) noexcept
 	{
-		return renderAPI.m_pImmediateContext.Get();
+		return directX11Context.m_pImmediateContext.Get();
 	}
 
-	ID3D11Device* GraphicsResource::GetDevice(DirectX11RendererAPI& rederAPI) noexcept
+	ID3D11Device* GraphicsResource::GetDevice(DirectX11Context& directX11Context) noexcept
 	{
-		return rederAPI.m_pd3dDevice.Get();
+		return directX11Context.m_pd3dDevice.Get();
 	}
 
 }
