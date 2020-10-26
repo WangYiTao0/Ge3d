@@ -8,7 +8,7 @@
 
 #include "GE/ImGui/ImGuiLayer.h"
 
-#include "Ge/Renderer/GraphicsContext.h"
+#include "Ge/Renderer/Graphics.h"
 
 int main(int argc, char** argv);
 

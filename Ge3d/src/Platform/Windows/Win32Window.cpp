@@ -91,7 +91,7 @@ namespace Ge
 		UpdateWindow(m_Win32Window);
 		SetFocus(m_Win32Window);
 
-		m_Context = GraphicsContext::Create();
+		m_Context = Graphics::Create();
 		m_Context->Init(m_Win32Window,m_Data.Width,m_Data.Height);
 
 	}

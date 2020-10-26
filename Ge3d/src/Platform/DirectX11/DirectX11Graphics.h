@@ -1,13 +1,13 @@
 #pragma once
 
-#include "Ge/Renderer/GraphicsContext.h"
+#include "Ge/Renderer/Graphics.h"
 
 namespace Ge
 {
-	class DirectX11Context : public GraphicsContext
+	class DirectX11Graphics : public Graphics
 	{
 	public:
-		friend class GraphicsResource;
+		friend class DirectX11GraphicsResource;
 	public:
 
 		virtual bool Init(HWND hwnd, UINT width, UINT height) override;

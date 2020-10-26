@@ -1,6 +1,6 @@
 #include "GE/Core/Window.h"
 
-#include "Ge/Renderer/GraphicsContext.h"
+#include "Ge/Renderer/Graphics.h"
 
 namespace Ge
 {
@@ -31,7 +31,7 @@ namespace Ge
 	private:
 
 		HWND m_Win32Window;
-		Scope<GraphicsContext> m_Context;
+		Scope<Graphics> m_Context;
 
 		struct WindowData
 		{

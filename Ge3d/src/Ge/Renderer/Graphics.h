@@ -2,11 +2,11 @@
 
 namespace Ge
 {
-	class GraphicsContext
+	class Graphics
 	{
 	public: 
-		GraphicsContext() = default;
-		virtual~GraphicsContext() = default;
+		Graphics() = default;
+		virtual~Graphics() = default;
 
 
 		virtual bool Init(HWND hwnd, UINT width, UINT height) = 0;
@@ -15,6 +15,6 @@ namespace Ge
 		virtual void SwapBuffers(bool vsync) = 0;
 		virtual void OnResize(uint32_t width, uint32_t height) = 0;
 
-		static Scope<GraphicsContext> Create();
+		static Scope<Graphics> Create();
 	};
 }

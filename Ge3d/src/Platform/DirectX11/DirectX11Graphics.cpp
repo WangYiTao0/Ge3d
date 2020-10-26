@@ -1,10 +1,10 @@
 #include "gepch.h"
-#include "DirectX11Context.h"
+#include "DirectX11Graphics.h"
 #include "Ge/Core/Log.h"
 
 namespace Ge
 {
-	bool DirectX11Context::Init(HWND hwnd, UINT width, UINT height)
+	bool DirectX11Graphics::Init(HWND hwnd, UINT width, UINT height)
 	{
 		HRESULT hr = 0;
 
@@ -83,23 +83,23 @@ namespace Ge
 		return true;
 	}
 
-	void DirectX11Context::BeginFrame()
+	void DirectX11Graphics::BeginFrame()
 	{
 
 	}
 
-	void DirectX11Context::SetClearColor(float r, float g, float b, float a)
+	void DirectX11Graphics::SetClearColor(float r, float g, float b, float a)
 	{
 		FLOAT clear_color[] = { r,g,b,a };
 		m_pImmediateContext->ClearRenderTargetView(m_pRtv.Get(),clear_color);
 	}
 
-	void DirectX11Context::SwapBuffers(bool vsync)
+	void DirectX11Graphics::SwapBuffers(bool vsync)
 	{
 		m_pSwapChain->Present(vsync, 0);
 	}
 
-	void DirectX11Context::OnResize(uint32_t width, uint32_t height)
+	void DirectX11Graphics::OnResize(uint32_t width, uint32_t height)
 	{
 
 	}
